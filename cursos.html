@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Áreas y Subáreas con Menú</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #ffb0b0;
+        }
+
+        .navbar {
+            background-color: #8dd29d;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        .menu {
+            position: relative;
+            display: inline-block;
+        }
+
+        .menu button {
+            background-color: #8dd29d;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .menu-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 5px;
+        }
+
+        .menu-content a {
+            color: black;
+            padding: 10px 16px;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .menu-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .menu:hover .menu-content {
+            display: block;
+        }
+
+        .logout {
+            cursor: pointer;
+            color: white;
+            background-color: #ff4c4c;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .container {
+            padding: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+        }
+
+        th {
+            background-color: #d96e88;
+            color: white;
+        }
+
+        h2 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="menu">
+            <button>Menú</button>
+            <div class="menu-content">
+                <a href="#">Ejercicio1</a>
+                <a href="#">Ejercicio2</a>
+            </div>
+        </div>
+        <div>
+            <span>Administrador<strong></strong></span>
+            <button class="logout" onclick="logout()">Cerrar sesión</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Áreas Temáticas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre del área</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>Ingeniería</td></tr>
+                <tr><td>2</td><td>Salud</td></tr>
+                <tr><td>3</td><td>Administración</td></tr>
+                <tr><td>4</td><td>Educación</td></tr>
+                <tr><td>5</td><td>Tecnologías de la Información</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Ocupaciones (Subáreas)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre de la subárea</th>
+                    <th>ID Área</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>Ingeniero Civil</td><td>1</td></tr>
+                <tr><td>2</td><td>Ingeniero Mecánico</td><td>1</td></tr>
+                <tr><td>3</td><td>Enfermero</td><td>2</td></tr>
+                <tr><td>4</td><td>Médico General</td><td>2</td></tr>
+                <tr><td>5</td><td>Contador</td><td>3</td></tr>
+                <tr><td>6</td><td>Administrador de Empresas</td><td>3</td></tr>
+                <tr><td>7</td><td>Profesor de Matemáticas</td><td>4</td></tr>
+                <tr><td>8</td><td>Profesor de Idiomas</td><td>4</td></tr>
+                <tr><td>9</td><td>Desarrollador Web</td><td>5</td></tr>
+                <tr><td>10</td><td>Especialista en Ciberseguridad</td><td>5</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function logout() {
+            window.location.href = "iniciosesion.html";
+        }
+    </script>
+</body>
+</html>
